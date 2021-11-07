@@ -87,6 +87,7 @@ namespace tomasz.gawron
 
 
             Assert.AreEqual(bag_big, bag2.AddMoneyBag(bag2));
+
         }
     }
 }
