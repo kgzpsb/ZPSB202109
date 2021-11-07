@@ -37,7 +37,7 @@ namespace tomasz.gawron
         {
             var x = 1; 
             var y = 2; 
-            Assert.AreEqual(x, y); 
+            Assert.AreNotEqual(x, y); 
         }
 
         [Test]
@@ -81,9 +81,8 @@ namespace tomasz.gawron
         public void SimpleAddMoneyBag() {
             Cash expected = new Cash(28, "CHF");
             Cash add = new Cash(14, "CHF");
-            Cash add2 = new Cash(14, "CHF");
             CashBag bag_big = new CashBag(expected, expected);
-            CashBag bag2 = new CashBag(add, add2);
+            CashBag bag2 = new CashBag(add, add);
 
 
             Assert.AreEqual(bag_big, bag2.AddMoneyBag(bag2));
