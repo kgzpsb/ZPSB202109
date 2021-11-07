@@ -36,5 +36,12 @@ namespace tomasz.gawron
             var y = 2; 
             Assert.AreEqual(x, y); 
         }
+
+        [Test]
+        public void test_4()
+        {
+            bool x = true;
+            Assert.IsTrue(x);
+        }
     }
 }
