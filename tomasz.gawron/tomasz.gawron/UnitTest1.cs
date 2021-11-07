@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 
 namespace tomasz.gawron
 {
@@ -7,12 +8,40 @@ namespace tomasz.gawron
         [SetUp]
         public void Setup()
         {
+            Console.WriteLine("This is setup");
+        }
+
+        [TearDown]
+        public void Teardown()
+        {
+            Console.WriteLine("This is Teardown");
         }
 
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            Console.WriteLine("Test1");
+        }
+
+        [Test]
+        public void Test2()
+        {
+            Console.WriteLine("Test2");
+        }
+
+        [Test] 
+        public void test3() 
+        {
+            var x = 1; 
+            var y = 2; 
+            Assert.AreEqual(x, y); 
+        }
+
+        [Test]
+        public void test_4()
+        {
+            bool x = true;
+            Assert.IsTrue(x);
         }
     }
 }
