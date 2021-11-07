@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 
 namespace TestProject1
 {
@@ -7,12 +8,34 @@ namespace TestProject1
         [SetUp]
         public void Setup()
         {
+            Console.WriteLine("This is SetUp");
         }
 
         [Test]
+        [Category("Smoke")]
         public void Test1()
         {
-            Assert.Pass();
+            
+            var x = 1;
+            var y = 1;
+            Assert.AreEqual(x, y);
+        }
+
+        [Test]
+        [Category("Sanity")]
+        public void Test2()
+        {
+            
+            
+            var x = 2;
+            var y = 3;
+            Assert.AreNotEqual(x, y);
+        }
+
+        [TearDown]
+        public void Teardown()
+        {
+            Console.WriteLine("This is Teardown");
         }
     }
 }
