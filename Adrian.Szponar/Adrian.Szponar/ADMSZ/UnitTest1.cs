@@ -40,7 +40,7 @@ namespace ADMSZ
             Assert.AreEqual(c2CHF.Currency, c2CHF.Currency);
         }
 
-
+        /*
         [Test]
         [Category("Unit")]
         public void TestMock()
@@ -57,6 +57,6 @@ namespace ADMSZ
             mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Never());
         }
 
-
+        */
     }
 }

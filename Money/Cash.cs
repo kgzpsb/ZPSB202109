@@ -64,10 +64,12 @@ namespace NUnit.Samples.Cash
 
         public void SetCurrency(string v)
         {
-            //throw new NotImplementedException();
-        }
+            fCurrency = v;
 
-        public override int GetHashCode()
+        //throw new NotImplementedException();
+    }
+
+    public override int GetHashCode()
         {
             return fCurrency.GetHashCode() + fAmount;
         }
