@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using NUnit.Samples.Cash;
+using Moq;
 
 namespace tomasz.gawron
 {
@@ -19,7 +20,7 @@ namespace tomasz.gawron
         {
             Console.WriteLine("This is Teardown");
         }
-
+        [Category("unit")]
         [Test]
         public void Test1()
         {
@@ -87,6 +88,41 @@ namespace tomasz.gawron
 
             Assert.AreEqual(bag_big, bag2.AddMoneyBag(bag2));
 
+        }
+
+        /// <summary> 
+        /// Test set Currency , Data-Driven Testing 
+        /// </summary> 
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        public void SetCurrency_ChangeCurrencyAndValue_CashObjAreTheSame(int value)
+        {
+            Cash currencyCHF = new Cash(value, "CHF");
+            Cash currencyPLN = new Cash(value, "PLN");
+            currencyCHF.SetCurrency("CHF");
+            Assert.AreEqual(currencyPLN.Currency, currencyPLN.Currency);
+        }
+
+
+
+
+        [Test]
+        [Category("Unit")]
+        public void TestMock()
+        {
+            //assert 
+            var Cash = new Cash(2, "PLN");
+            var mockBag = new Mock<ICash>();
+            mockBag.Setup(x => x.AddMoney(It.IsAny<Cash>())).Returns(new Cash(1, "CHF"));
+
+            //act 
+            Cash.AddMoneyBag(mockBag.Object);
+
+
+            //assert 
+            Assert.IsTrue(true);
+            mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Never());
         }
     }
 }
