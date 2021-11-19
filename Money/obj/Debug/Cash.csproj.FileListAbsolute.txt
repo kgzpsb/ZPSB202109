@@ -1,7 +1,0 @@
-C:\Users\Black\source\repos\kgzpsb\ZPSB202109\Money\bin\Debug\Money.exe.config
-C:\Users\Black\source\repos\kgzpsb\ZPSB202109\Money\bin\Debug\Money.exe
-C:\Users\Black\source\repos\kgzpsb\ZPSB202109\Money\obj\Debug\Cash.csproj.AssemblyReference.cache
-C:\Users\Black\source\repos\kgzpsb\ZPSB202109\Money\obj\Debug\Cash.csproj.CoreCompileInputs.cache
-C:\Users\Black\source\repos\kgzpsb\ZPSB202109\Money\obj\Debug\Money.exe
-C:\Users\Black\source\repos\kgzpsb\ZPSB202109\Money\obj\Debug\Money.pdb
-C:\Users\Black\source\repos\kgzpsb\ZPSB202109\Money\bin\Debug\Money.pdb
