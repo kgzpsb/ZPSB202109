@@ -33,7 +33,7 @@ namespace NUnit.Samples.Cash
             return new CashBag(this, m);
         }
 
-        public ICash AddMoneyBag(CashBag s)
+        public ICash AddMoneyBag(ICash s)
         {
             return s.AddMoney(this);
         }
@@ -62,12 +62,17 @@ namespace NUnit.Samples.Cash
             return false;
         }
 
-        public void SetCurrency(string v)
+        public void SetCurrency(string newCurrency)
         {
+<<<<<<< HEAD
             fCurrency = v;
 
         //throw new NotImplementedException();
     }
+=======
+            fCurrency = newCurrency;
+        }
+>>>>>>> 0f7b0f269705e10b08da96d828412adf32ababdf
 
     public override int GetHashCode()
         {
