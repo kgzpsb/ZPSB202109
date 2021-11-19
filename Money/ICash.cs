@@ -13,7 +13,7 @@ namespace NUnit.Samples.Cash
 
         /// <summary>Adds a MoneyBag to this money. This is a helper method for
         /// implementing double dispatch.</summary>
-        ICash AddMoneyBag(CashBag s);
+        ICash AddMoneyBag(ICash s);
 
         /// <value>True if this money is zero.</value>
         bool IsZero { get; }
