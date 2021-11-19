@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31727.386
+VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mateusz.Buczma", "Mateusz.Buczma\Mateusz.Buczma.csproj", "{AE248956-9815-4A4A-A03A-167BF92ADF30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{C2F77DF0-A6CF-46E6-A770-546A4D2D4CF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cash", "..\..\Money\Cash.csproj", "{5B5AA0FF-4AEB-40E2-85AA-16F2B9FCAF5C}"
 EndProject
@@ -13,10 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AE248956-9815-4A4A-A03A-167BF92ADF30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE248956-9815-4A4A-A03A-167BF92ADF30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE248956-9815-4A4A-A03A-167BF92ADF30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE248956-9815-4A4A-A03A-167BF92ADF30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F77DF0-A6CF-46E6-A770-546A4D2D4CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F77DF0-A6CF-46E6-A770-546A4D2D4CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F77DF0-A6CF-46E6-A770-546A4D2D4CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F77DF0-A6CF-46E6-A770-546A4D2D4CF3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B5AA0FF-4AEB-40E2-85AA-16F2B9FCAF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B5AA0FF-4AEB-40E2-85AA-16F2B9FCAF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B5AA0FF-4AEB-40E2-85AA-16F2B9FCAF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {41D33C89-5AE1-4DCD-89D8-DEF9D527D617}
+		SolutionGuid = {5D51C093-6A14-4989-BB16-EEA6786DCECA}
 	EndGlobalSection
 EndGlobal

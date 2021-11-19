@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31727.386
+VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mateusz.Buczma", "Mateusz.Buczma\Mateusz.Buczma.csproj", "{AE248956-9815-4A4A-A03A-167BF92ADF30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject1", "NUnitTestProject1\NUnitTestProject1.csproj", "{F86C08F6-49F5-4CA5-ABD4-EE4FDCF16585}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cash", "..\..\Money\Cash.csproj", "{5B5AA0FF-4AEB-40E2-85AA-16F2B9FCAF5C}"
 EndProject
@@ -13,10 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AE248956-9815-4A4A-A03A-167BF92ADF30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE248956-9815-4A4A-A03A-167BF92ADF30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE248956-9815-4A4A-A03A-167BF92ADF30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE248956-9815-4A4A-A03A-167BF92ADF30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F86C08F6-49F5-4CA5-ABD4-EE4FDCF16585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86C08F6-49F5-4CA5-ABD4-EE4FDCF16585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86C08F6-49F5-4CA5-ABD4-EE4FDCF16585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86C08F6-49F5-4CA5-ABD4-EE4FDCF16585}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B5AA0FF-4AEB-40E2-85AA-16F2B9FCAF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B5AA0FF-4AEB-40E2-85AA-16F2B9FCAF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B5AA0FF-4AEB-40E2-85AA-16F2B9FCAF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {41D33C89-5AE1-4DCD-89D8-DEF9D527D617}
+		SolutionGuid = {E999DE40-CDF7-4FB3-8C7E-3DC85B28F67F}
 	EndGlobalSection
 EndGlobal
