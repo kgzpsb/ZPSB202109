@@ -105,8 +105,6 @@ namespace tomasz.gawron
         }
 
 
-
-
         [Test]
         [Category("Unit")]
         public void TestMock()
@@ -122,7 +120,7 @@ namespace tomasz.gawron
 
             //assert 
             Assert.IsTrue(true);
-            mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Never());
+            mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Once());
         }
     }
 }
