@@ -1,0 +1,7 @@
+C:\Users\Admin\Source\Repos\ZPSB202109\Money\bin\Debug\Money.exe.config
+C:\Users\Admin\Source\Repos\ZPSB202109\Money\bin\Debug\Money.exe
+C:\Users\Admin\Source\Repos\ZPSB202109\Money\bin\Debug\Money.pdb
+C:\Users\Admin\Source\Repos\ZPSB202109\Money\obj\Debug\Cash.csproj.AssemblyReference.cache
+C:\Users\Admin\Source\Repos\ZPSB202109\Money\obj\Debug\Cash.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\ZPSB202109\Money\obj\Debug\Money.exe
+C:\Users\Admin\Source\Repos\ZPSB202109\Money\obj\Debug\Money.pdb
