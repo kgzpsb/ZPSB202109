@@ -44,9 +44,10 @@ namespace SpecFlowProject1.Features
         [Given(@"I click on (.*)")]
         public void GivenIClickOn(string p0)
         {
-            // bad practice   /html/body/div[3]/div[5]/div[2]/div[4]/a[1]
+            // bad practice   /html/body/div[3]/div[5]/div[2]/div[4]/a[1] (Good //a//span[text()='Poczta']  )
             Thread.Sleep(3000);
-            var firstXPath = "//a//span[text()='Poczta']";
+            //Tutaj zmieniłem Poczta 
+            var firstXPath = "//a//span[text()='Pocza']";
             var elementPoczta = webdriver.FindElement(By.XPath(firstXPath));
             elementPoczta.Click();
         }
@@ -69,7 +70,7 @@ namespace SpecFlowProject1.Features
         public void WhenIPressSubmit()
         {
 
-            ///html/body/div[4]/div/div[2]/div/div/div[1]/form/button
+            ///html/body/div[4]/div/div[2]/div/div/div[1]/form/button  
             var submitBtnCssSelector = "html/body/div[4]/div/div[2]/div/div/div[1]/form/button";
             var submitBtn = webdriver.FindElement(By.XPath(submitBtnCssSelector));
             
