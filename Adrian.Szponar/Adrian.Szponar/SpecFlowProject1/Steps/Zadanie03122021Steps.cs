@@ -1,6 +1,13 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.IO;
+using System.Reflection;
 using System.Threading;
 using TechTalk.SpecFlow;
 
@@ -13,9 +20,11 @@ namespace SpecFlowProject1.Features
         private WebDriverWait webdriverWait;
         public SpecFlowFeature2Steps(IWebDriver driver)
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            
             webdriver = driver;
             webdriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        
+        
         }
         [Given(@"I enter wp\.pl")]
         public void GivenIEnterWp_Pl()
@@ -33,9 +42,9 @@ namespace SpecFlowProject1.Features
         [Given(@"I click on (.*)")]
         public void GivenIClickOn(string p0)
         {
-            // bad practice
+            // bad practice   /html/body/div[3]/div[5]/div[2]/div[4]/a[1]
             Thread.Sleep(3000);
-            var firstXPath = "/html/body/div[3]/div[5]/div[2]/div[4]/a[1]";
+            var firstXPath = "//a//span[text()='Poczta']";
             var elementPoczta = webdriver.FindElement(By.XPath(firstXPath));
             elementPoczta.Click();
         }
@@ -54,17 +63,27 @@ namespace SpecFlowProject1.Features
         [When(@"I press submit")]
         public void WhenIPressSubmit()
         {
-            var submitBtnCssSelector = "#btnSubmit";
-            var submitBtn = webdriver.FindElement(By.CssSelector(submitBtnCssSelector));
-            Thread.Sleep(5000);
+
+            ///html/body/div[4]/div/div[2]/div/div/div[1]/form/button
+            var submitBtnCssSelector = "html/body/div[4]/div/div[2]/div/div/div[1]/form/button";
+            var submitBtn = webdriver.FindElement(By.XPath(submitBtnCssSelector));
+            Thread.Sleep(2000);
             submitBtn.Click();
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
         }
-        //[Then(@"I expect to see message as „Niestety podany login lub hasło jest błędne\.”")]
-        //public void ThenIExpectToSeeMessageAsNiestetyPodanyLoginLubHasloJestBledne_()
-        //{
-        //    //Zaimplementowac
-        //}
+        [Then(@"I expect to see message as „Niestety podany login lub hasło jest błędne\.”")]
+        public void ThenIExpectToSeeMessageAsNiestetyPodanyLoginLubHasloJestBledne_()
+        {
+            ///html/body/div[4]/div/div[2]/div/div/div[1]/form/div[3]/span
+            ///
+            Thread.Sleep(2000);
+            var FailXPath = "html/body/div[4]/div/div[2]/div/div/div[1]/form/div[3]/span";
+            var elementFail = webdriver.FindElement(By.XPath(FailXPath));
+            Thread.Sleep(2000);
+            elementFail.Click();
+        }
 
     }
 }
+
+

@@ -1,6 +1,7 @@
 ﻿using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumExtras.PageObjects;
 using System.IO;
 using System.Reflection;
 using TechTalk.SpecFlow;
@@ -24,11 +25,27 @@ namespace SpecFlowProject1.Hooks
         public void BeforeScenario()
         {
             //TODO: implement logic that has to run before executing each scenario
-            webdriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            //webdriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            webdriver = DriverFactory.GetDriver(TypeDriver.Chrome);
+
             _objectContainer.RegisterInstanceAs<IWebDriver>(webdriver);
 
 
         }
+
+        //public class LoginEmailPage
+        //{
+        //    public LoginEmailPage(IWebDriver driver)
+        //    {
+        //        PageFactory.InitElements(driver, this);
+        //    }
+        //    [FindsBy(How = How.Id, Using = "login")]
+        //    public IWebElement login { get; set; }
+        //    [FindsBy(How = How.Name, Using = "password")]
+        //    public IWebElement pass { get; set; }
+        //}
+
+
 
         [AfterScenario]
         public void AfterScenario()
