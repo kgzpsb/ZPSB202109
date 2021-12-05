@@ -1,25 +1,27 @@
 ﻿using OpenQA.Selenium;
-using SeleniumExtras.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SpecFlowProject1.Pages
 {
     public class LoginEmailPage
     {
+        IWebDriver webdriver;
         public LoginEmailPage(IWebDriver driver)
         {
-            PageFactory.InitElements(driver, this);
+            webdriver = driver;
+            
         }
 
+        By loginBy = By.Id("login");
+        By passBy = By.Id("password");
 
-        [FindsBy(How = How.Id, Using = "login")]
-        public IWebElement login { get; set; }
+        public IWebElement login => webdriver.FindElement(loginBy);
+        public IWebElement pass => webdriver.FindElement(passBy);
 
-        [FindsBy(How = How.Name, Using = "password")]
-        public IWebElement pass { get; set; }
+
+        //[FindsBy(How = How.Id, Using = "login")]
+        //public IWebElement login { get; set; }
+
+        //[FindsBy(How = How.Name, Using = "password")]
+        //public IWebElement pass { get; set; }
     }
 }

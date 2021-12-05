@@ -1,9 +1,5 @@
 ﻿using BoDi;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using SeleniumExtras.PageObjects;
-using System.IO;
-using System.Reflection;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowProject1.Hooks
@@ -40,6 +36,9 @@ namespace SpecFlowProject1.Hooks
         public void AfterScenario()
         {
             //TODO: implement logic that has to run after executing each scenario
+            var errorClass = new SaveErrorDetails(webdriver);
+            errorClass.SaveScreenshotAndLogsOnError();
+
             webdriver.Close();
             webdriver.Dispose();
         }
