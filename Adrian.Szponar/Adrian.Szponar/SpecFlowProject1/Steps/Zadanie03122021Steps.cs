@@ -5,6 +5,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Support.UI;
+using SpecFlowProject1.Pages;
 using System;
 using System.IO;
 using System.Reflection;
@@ -18,13 +19,14 @@ namespace SpecFlowProject1.Features
     {
         private IWebDriver webdriver;
         private WebDriverWait webdriverWait;
+        private LoginEmailPage loginPage;
         public SpecFlowFeature2Steps(IWebDriver driver)
         {
             
             webdriver = driver;
             webdriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        
-        
+            loginPage = new LoginEmailPage(webdriver);//Dodane
+
         }
         [Given(@"I enter wp\.pl")]
         public void GivenIEnterWp_Pl()
@@ -51,14 +53,17 @@ namespace SpecFlowProject1.Features
         [When(@"I fill wrong email login")]
         public void WhenIFillWrongEmailLogin()
         {
-            var login = webdriver.FindElement(By.Id("login"));
-            login.SendKeys("Test");
+            //var login = webdriver.FindElement(By.Id("login"));
+            //login.SendKeys("Test");
+            loginPage.login.SendKeys("Test");
         }
         [When(@"I fill wrong password")]
         public void WhenIFillWrongPassword()
         {
-            var pass = webdriver.FindElement(By.Name("password"));
-            pass.SendKeys("pomidor");
+            //var pass = webdriver.FindElement(By.Name("password"));
+            //pass.SendKeys("pomidor");
+            loginPage.pass.SendKeys("pomidor");
+            Thread.Sleep(2000);
         }
         [When(@"I press submit")]
         public void WhenIPressSubmit()
@@ -67,7 +72,7 @@ namespace SpecFlowProject1.Features
             ///html/body/div[4]/div/div[2]/div/div/div[1]/form/button
             var submitBtnCssSelector = "html/body/div[4]/div/div[2]/div/div/div[1]/form/button";
             var submitBtn = webdriver.FindElement(By.XPath(submitBtnCssSelector));
-            Thread.Sleep(2000);
+            
             submitBtn.Click();
             Thread.Sleep(2000);
         }
@@ -76,10 +81,10 @@ namespace SpecFlowProject1.Features
         {
             ///html/body/div[4]/div/div[2]/div/div/div[1]/form/div[3]/span
             ///
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             var FailXPath = "html/body/div[4]/div/div[2]/div/div/div[1]/form/div[3]/span";
             var elementFail = webdriver.FindElement(By.XPath(FailXPath));
-            Thread.Sleep(2000);
+         
             elementFail.Click();
         }
 

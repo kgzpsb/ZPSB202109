@@ -33,17 +33,6 @@ namespace SpecFlowProject1.Hooks
 
         }
 
-        //public class LoginEmailPage
-        //{
-        //    public LoginEmailPage(IWebDriver driver)
-        //    {
-        //        PageFactory.InitElements(driver, this);
-        //    }
-        //    [FindsBy(How = How.Id, Using = "login")]
-        //    public IWebElement login { get; set; }
-        //    [FindsBy(How = How.Name, Using = "password")]
-        //    public IWebElement pass { get; set; }
-        //}
 
 
 
