@@ -1,8 +1,0 @@
-C:\Users\Batai\source\repos\kgzpsb\ZPSB202109\Money\bin\Debug\Money.exe.config
-C:\Users\Batai\source\repos\kgzpsb\ZPSB202109\Money\bin\Debug\Money.exe
-C:\Users\Batai\source\repos\kgzpsb\ZPSB202109\Money\bin\Debug\Money.pdb
-C:\Users\Batai\source\repos\kgzpsb\ZPSB202109\Money\obj\Debug\Cash.csproj.AssemblyReference.cache
-C:\Users\Batai\source\repos\kgzpsb\ZPSB202109\Money\obj\Debug\Cash.csproj.SuggestedBindingRedirects.cache
-C:\Users\Batai\source\repos\kgzpsb\ZPSB202109\Money\obj\Debug\Cash.csproj.CoreCompileInputs.cache
-C:\Users\Batai\source\repos\kgzpsb\ZPSB202109\Money\obj\Debug\Money.exe
-C:\Users\Batai\source\repos\kgzpsb\ZPSB202109\Money\obj\Debug\Money.pdb

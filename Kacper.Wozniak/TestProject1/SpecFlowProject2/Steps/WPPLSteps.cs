@@ -11,11 +11,8 @@ namespace SpecFlowProject2.Steps
     {
         private IWebDriver webdriver;
         private WebDriverWait webdriverWait;
-        private LoginEmailPage loginPage;
-
         public WPPLSteps(IWebDriver driver)
         {
-            loginPage = new LoginEmailPage(driver);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             webdriver = driver;
             webdriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -39,7 +36,7 @@ namespace SpecFlowProject2.Steps
         {
             // bad practice
             Thread.Sleep(5000);
-            var firstXPath = "//a//span[text()='Poczta']";
+            var firstXPath = "//*[@id="site - header"]/div[2]/div[4]/a[1]";
             var elementPoczta = webdriver.FindElement(By.XPath(firstXPath));
             elementPoczta.Click();
         }
@@ -47,20 +44,22 @@ namespace SpecFlowProject2.Steps
         [When(@"I fill wrong email login")]
         public void WhenIFillWrongEmailLogin()
         {
-            loginPage.login.SendKeys("Test");
+            var login = webdriver.FindElement(By.Id("login"));
+            login.SendKeys("Test");
         }
 
         [When(@"I fill wrong password")]
         public void WhenIFillWrongPassword()
         {
-            loginPage.pass.SendKeys("pomidor");
+            var pass = webdriver.FindElement(By.Name("password"));
+            pass.SendKeys("pomidor");
         }
 
         [When(@"I press submit")]
         public void WhenIPressSubmit()
         {
             var submitBtnCssSelector = "#btnSubmit";
-            var submitBtn = webdriver.FindElement(By.CssSelector("sc-bdvvtL sc-gsDKAQ styled__SubmitButton-sc-1bs2nwv-2 ekJwFE hIxhWw jyhBDA"));
+            var submitBtn = webdriver.FindElement(By.CssSelector(submitBtnCssSelector));
             Thread.Sleep(5000);
             submitBtn.Click();
             Thread.Sleep(5000);

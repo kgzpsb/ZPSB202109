@@ -29,16 +29,13 @@ namespace SpecFlowProject2.Hooks
         [BeforeScenario]
         public void BeforeScenario()
         {
-            webdriver = DriverFactory.GetDriver(TypeDriver.Chrome);
+            webdriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             _objectContainer.RegisterInstanceAs<IWebDriver>(webdriver);
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            var errorClass = new SaveErrorDetails(webdriver);
-            errorClass.SaveScreenshotAndLogsOnError();
-
             webdriver.Close();
             webdriver.Dispose();
 
