@@ -53,9 +53,9 @@ namespace NUnit.Samples.Cash
         {
             return (new CashBag(m, this)).Simplify();
         }
-        public ICash AddMoneyBag(CashBag s)
+        public ICash AddMoneyBag(ICash s)
         {
-            return (new CashBag(s, this)).Simplify();
+            return (new CashBag((Cash)s, this)).Simplify();
         }
         private void AppendBag(CashBag aBag)
         {
