@@ -13,6 +13,7 @@ namespace NUnit.Samples.Cash
 
         /// <summary>Constructs a money from the given amount and
         /// currency.</summary>
+        /// konstruktur klasy cash 
         public Cash(int amount, String currency)
         {
             fAmount = amount;
@@ -64,7 +65,7 @@ namespace NUnit.Samples.Cash
 
         public void SetCurrency(string v)
         {
-            //throw new NotImplementedException();
+            fCurrency = v;
         }
 
         public override int GetHashCode()

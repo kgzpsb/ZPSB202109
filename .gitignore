@@ -56,3 +56,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+/Money/obj/Debug
+/Money/bin/Debug
+/Natalia_Konsko/TestProject1/bin/Debug/netcoreapp3.1
+/Natalia_Konsko/TestProject1/obj/Debug/netcoreapp3.1
