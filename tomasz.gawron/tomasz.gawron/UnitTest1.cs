@@ -21,17 +21,7 @@ namespace tomasz.gawron
             Console.WriteLine("This is Teardown");
         }
         [Category("unit")]
-        [Test]
-        public void Test1()
-        {
-            Console.WriteLine("Test1");
-        }
 
-        [Test]
-        public void Test2()
-        {
-            Console.WriteLine("Test2");
-        }
 
         [Test] 
         public void test3() 
@@ -77,18 +67,13 @@ namespace tomasz.gawron
 
             Assert.AreEqual(expected, f14CHF.AddMoney(add));
         }
-
         [Test]
-        public void SimpleAddMoneyBag() {
-            Cash expected = new Cash(28, "CHF");
-            Cash add = new Cash(14, "CHF");
-            CashBag bag_big = new CashBag(expected, expected);
-            CashBag bag2 = new CashBag(add, add);
-
-
-            Assert.AreEqual(bag_big, bag2.AddMoneyBag(bag2));
-
+        public void SimpleTostring()
+        {
+            string expected = "[14 CHF]";
+            Assert.AreEqual(expected, f14CHF.ToString());
         }
+
 
         /// <summary> 
         /// Test set Currency , Data-Driven Testing 
@@ -100,9 +85,24 @@ namespace tomasz.gawron
         {
             Cash currencyCHF = new Cash(value, "CHF");
             Cash currencyPLN = new Cash(value, "PLN");
-            currencyCHF.SetCurrency("CHF");
+           
+            currencyPLN.SetCurrency("CHF");
+
             Assert.AreEqual(currencyPLN.Currency, currencyPLN.Currency);
         }
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        public void CashBagWithCashObjectEqualsTests(int currency)
+        {
+            Cash testCasch = new Cash(currency, "PLN");
+
+            CashBag test = new CashBag(testCasch, new Cash(3, "CHF"));
+            bool testEquals = testCasch.Equals(test);
+
+            Assert.AreEqual(false, testEquals);
+        }
+
 
 
         [Test]
