@@ -70,5 +70,24 @@ namespace TestProject1
 
             Assert.AreEqual(start.AddMoneyBag(test), test.Multiply(2).Subtract(add));
         }
+
+        /// <summary>
+        /// Test set Currency , Data-Driven Testing
+        /// </summary>
+        [TestCase( "14")]
+        [TestCase("1")]
+        [TestCase( "2")]
+        public void TwoCurrency_SetCurrency_AreEqual(int value)
+        {
+           
+            
+            Cash cashCHF = new Cash(value, "CHF");
+            Cash cashPLN = new Cash(value, "PLN");
+            cashPLN.SetCurrency("CHF");
+            Assert.AreEqual(cashPLN.Currency, cashCHF.Currency);
+        }
+
+
+
     }
 }
