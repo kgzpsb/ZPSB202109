@@ -78,24 +78,24 @@ namespace tomasz.gawron
         /// <summary> 
         /// Test set Currency , Data-Driven Testing 
         /// </summary> 
-        [TestCase(1)]
-        [TestCase(2)]
-        [TestCase(3)]
-        public void SetCurrency_ChangeCurrencyAndValue_CashObjAreTheSame(int value)
+        [TestCase(1,"PLN")]
+        [TestCase(2,"EUR")]
+        [TestCase(3,"USD")]
+        public void SetCurrency_ChangeCurrencyAndValue_CashObjAreTheSame(int value,string currency)
         {
             Cash currencyCHF = new Cash(value, "CHF");
-            Cash currencyPLN = new Cash(value, "PLN");
+            Cash currencyTEST = new Cash(value, currency);
            
-            currencyPLN.SetCurrency("CHF");
+            currencyTEST.SetCurrency("CHF");
 
-            Assert.AreEqual(currencyPLN.Currency, currencyPLN.Currency);
+            Assert.AreEqual(currencyCHF.Currency, currencyTEST.Currency);
         }
         [TestCase(1)]
         [TestCase(2)]
         [TestCase(3)]
-        public void CashBagWithCashObjectEqualsTests(int currency)
+        public void CashBagWithCashObjectEqualsTests(int value)
         {
-            Cash testCasch = new Cash(currency, "PLN");
+            Cash testCasch = new Cash(value, "PLN");
 
             CashBag test = new CashBag(testCasch, new Cash(3, "CHF"));
             bool testEquals = testCasch.Equals(test);
