@@ -13,9 +13,9 @@ namespace TestProject1
             f14CHF = new Cash(14, "CHF");
             Console.WriteLine("This is SetUp");
         }
-
-        [Test]
         [Category("Smoke")]
+        [Test]
+        
         public void Test1()
         {
             
@@ -23,9 +23,9 @@ namespace TestProject1
             var y = 1;
             Assert.AreEqual(x, y);
         }
-
-        [Test]
         [Category("Sanity")]
+        [Test]
+        
         public void Test2()
         {
             
@@ -51,6 +51,24 @@ namespace TestProject1
             // [14 CHF] *2 == [28 CHF]
             Cash expected = new Cash(28, "CHF");
             Assert.AreEqual(expected, f14CHF.Multiply(2));
+        }
+
+        [Test]
+        public void SimpleNegate()
+        {
+            // [14 CHF] *2 == [28 CHF]
+            Cash expected = new Cash(-14, "CHF");
+            Assert.AreEqual(expected, f14CHF.Negate());
+        }
+
+        [Test]
+        public void MoneyBag()
+        {
+            Cash start = new Cash(5, "CHF");
+            Cash add = new Cash(5, "USD");
+            CashBag test = new CashBag(start, add);
+
+            Assert.AreEqual(start.AddMoneyBag(test), test.Multiply(2).Subtract(add));
         }
     }
 }
