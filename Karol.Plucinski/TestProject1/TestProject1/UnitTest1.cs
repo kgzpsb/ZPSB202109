@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using NUnit.Samples.Cash;
+using Moq;
 
 namespace TestProject1
 {
@@ -77,7 +78,7 @@ namespace TestProject1
         [TestCase( "14")]
         [TestCase("1")]
         [TestCase( "2")]
-        public void TwoCurrency_SetCurrency_AreEqual(int value)
+        public void SetCurrency(int value)
         {
            
             
@@ -86,7 +87,23 @@ namespace TestProject1
             cashPLN.SetCurrency("CHF");
             Assert.AreEqual(cashPLN.Currency, cashCHF.Currency);
         }
+        [Test]
+        [Category("Unit")]
+        public void TestMock()
+        {
+            //assert
+            var Cash = new Cash(2, "PLN");
+            var mockBag = new Mock<ICash>();
+            mockBag.Setup(x => x.AddMoney(It.IsAny<Cash>())).Returns(new
+            Cash(1, "CHF"));
 
+            //act
+            Cash.AddMoneyBag(mockBag.Object);
+            //assert
+
+            
+            mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Once);
+        }
 
 
     }
